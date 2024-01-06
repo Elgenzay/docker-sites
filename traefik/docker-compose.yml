@@ -12,6 +12,7 @@ services:
       - ./traefik.yml:/traefik.yml
       - /var/run/docker.sock:/var/run/docker.sock
       - ./acme.json:/acme.json
+    restart: always
     networks:
       - webnet
 
