@@ -1,0 +1,23 @@
+version: '3'
+services:
+  steamsale_nginx:
+    image: nginx:latest
+    expose:
+      - "80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./html:/usr/share/nginx/html
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.steamsale_nginx.rule=Host(`steamsale.mov`)"
+      - "traefik.http.routers.steamsale_nginx.entrypoints=web"
+      - "traefik.http.routers.steamsale_nginx-secure.rule=Host(`steamsale.mov`)"
+      - "traefik.http.routers.steamsale_nginx-secure.entrypoints=websecure"
+      - "traefik.http.routers.steamsale_nginx-secure.tls.certresolver=myresolver"
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true
