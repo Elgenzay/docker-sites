@@ -1,2 +1,4 @@
 /traefik/acme.json
 /jason*/
+/elg.gg/*
+!/elg.gg/docker-compose.yml
