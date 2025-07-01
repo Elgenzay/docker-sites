@@ -1,6 +1,6 @@
 version: '3'
 services:
-  elg_gg:
+  bl_elg_gg:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,11 +9,11 @@ services:
     restart: always
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.elg_gg.rule=Host(`bl.elg.gg`)"
-      - "traefik.http.routers.elg_gg.entrypoints=web"
-      - "traefik.http.routers.elg_gg-secure.rule=Host(`bl.elg.gg`)"
-      - "traefik.http.routers.elg_gg-secure.entrypoints=websecure"
-      - "traefik.http.routers.elg_gg-secure.tls.certresolver=myresolver"
+      - "traefik.http.routers.bl_elg_gg.rule=Host(`bl.elg.gg`)"
+      - "traefik.http.routers.bl_elg_gg.entrypoints=web"
+      - "traefik.http.routers.bl_elg_gg-secure.rule=Host(`bl.elg.gg`)"
+      - "traefik.http.routers.bl_elg_gg-secure.entrypoints=websecure"
+      - "traefik.http.routers.bl_elg_gg-secure.tls.certresolver=myresolver"
     networks:
       - webnet
 
