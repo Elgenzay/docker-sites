@@ -16,6 +16,9 @@ services:
       - "traefik.http.routers.bl_elg_gg-secure.tls.certresolver=myresolver"
     networks:
       - webnet
+    volumes:
+      - /bl_elg_gg_static/assets:/usr/src/bl_elg_gg/static/assets
+      - /bl_elg_gg_static/posts:/usr/src/bl_elg_gg/static/posts
 
 networks:
   webnet:
