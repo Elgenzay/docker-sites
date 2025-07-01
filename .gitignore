@@ -2,3 +2,5 @@
 /jason*/
 /elg.gg/*
 !/elg.gg/docker-compose.yml
+/bl.elg.gg/*
+!/bl.elg.gg/docker-compose.yml

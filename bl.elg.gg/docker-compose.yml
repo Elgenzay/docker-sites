@@ -1,0 +1,22 @@
+version: '3'
+services:
+  elg_gg:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "80"
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.elg_gg.rule=Host(`bl.elg.gg`)"
+      - "traefik.http.routers.elg_gg.entrypoints=web"
+      - "traefik.http.routers.elg_gg-secure.rule=Host(`bl.elg.gg`)"
+      - "traefik.http.routers.elg_gg-secure.entrypoints=websecure"
+      - "traefik.http.routers.elg_gg-secure.tls.certresolver=myresolver"
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true
