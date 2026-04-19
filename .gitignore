@@ -4,3 +4,5 @@
 !/elg.gg/docker-compose.yml
 /bl.elg.gg/*
 !/bl.elg.gg/docker-compose.yml
+/dav.elg.gg/*
+!/dav.elg.gg/docker-compose.yml
