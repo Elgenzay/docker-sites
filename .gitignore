@@ -9,3 +9,6 @@
 !/dav.elg.gg/Dockerfile
 !/dav.elg.gg/radicale-birthday-calendar/
 !/dav.elg.gg/radicale-birthday-calendar/**
+!/dav.elg.gg/config/
+/dav.elg.gg/config/*
+!/dav.elg.gg/config/radicale.conf

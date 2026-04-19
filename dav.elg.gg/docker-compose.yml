@@ -19,14 +19,10 @@ services:
         limits:
           memory: 256M
           pids: 50
-    environment:
-      RADICALE_CONFIG_AUTH_TYPE: htpasswd
-      RADICALE_CONFIG_AUTH_HTPASSWD_FILENAME: /config/users
-      RADICALE_CONFIG_AUTH_HTPASSWD_ENCRYPTION: bcrypt
-      RADICALE_CONFIG_STORAGE_HOOK: '(git status --porcelain | awk ''{print $$2}'' | /venv/bin/python3 /usr/local/bin/create_birthday_calendar.py || true) && git add -A && (git diff --cached --quiet || git -c user.email=radicale@elg.gg -c user.name=Radicale commit -m ''Changes by %(user)s'')'
     volumes:
       - ./data:/data
       - ./config/users:/config/users:ro
+      - ./config/radicale.conf:/config/config:ro
     healthcheck:
       test: curl -f http://127.0.0.1:5232 || exit 1
       interval: 30s
