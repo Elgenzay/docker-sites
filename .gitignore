@@ -6,3 +6,6 @@
 !/bl.elg.gg/docker-compose.yml
 /dav.elg.gg/*
 !/dav.elg.gg/docker-compose.yml
+!/dav.elg.gg/Dockerfile
+!/dav.elg.gg/radicale-birthday-calendar/
+!/dav.elg.gg/radicale-birthday-calendar/**
